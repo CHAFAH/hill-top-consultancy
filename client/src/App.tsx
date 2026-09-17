@@ -4,6 +4,7 @@ import InnerPage from "./pages/InnerPage";
 import { ServiceDetailPage, ServiceGroupPage, ServicesIndex } from "./pages/ServicePages";
 import { AboutRouter } from "./pages/AboutPages";
 import { IndustryRouter } from "./pages/IndustryPages";
+import { StoriesRouter } from "./pages/SuccessStories";
 
 export default function App() {
   return <Switch>
@@ -15,6 +16,8 @@ export default function App() {
     <Route path="/about"><AboutRouter /></Route>
     <Route path="/industries/:slug"><IndustryRouter /></Route>
     <Route path="/industries"><IndustryRouter /></Route>
+    <Route path="/success-stories/:slug"><StoriesRouter /></Route>
+    <Route path="/success-stories"><StoriesRouter /></Route>
     <Route path="/insights"><InnerPage page="insights" /></Route>
     <Route path="/contact"><InnerPage page="contact" /></Route>
     <Route><InnerPage page="services" /></Route>

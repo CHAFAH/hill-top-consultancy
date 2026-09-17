@@ -156,7 +156,7 @@ export default function Home() {
           <ServicesMegaMenu />
           <SiteMegaMenu label="About us" href="/about" intro="About Hill-Top" title="A partner built for lasting value." items={aboutItems} />
           <SiteMegaMenu label="Industries" href="/industries" intro="Industries we serve" title="Deep context. Better outcomes." items={industryItems} />
-          <a href="/insights">Success stories</a>
+          <a href="/success-stories">Success stories</a>
           <a href="/insights">Insights <ChevronDown size={15} /></a>
         </nav>
         <div className="header-actions">
