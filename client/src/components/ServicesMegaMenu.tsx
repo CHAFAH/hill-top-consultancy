@@ -6,16 +6,21 @@ export default function ServicesMegaMenu() {
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
+    const closeWhenAnotherMenuOpens = (event: Event) => {
+      if ((event as CustomEvent<string>).detail !== "services") setOpen(false);
+    };
     const closeWhenOutside = (event: PointerEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) setOpen(false);
     };
     const closeOnEscape = (event: KeyboardEvent) => { if (event.key === "Escape") setOpen(false); };
+    window.addEventListener("mega-menu-open", closeWhenAnotherMenuOpens);
     document.addEventListener("pointerdown", closeWhenOutside);
     document.addEventListener("keydown", closeOnEscape);
-    return () => { document.removeEventListener("pointerdown", closeWhenOutside); document.removeEventListener("keydown", closeOnEscape); };
+    return () => { window.removeEventListener("mega-menu-open", closeWhenAnotherMenuOpens); document.removeEventListener("pointerdown", closeWhenOutside); document.removeEventListener("keydown", closeOnEscape); };
   }, []);
+  const openMenu = () => { window.dispatchEvent(new CustomEvent("mega-menu-open", { detail: "services" })); setOpen(true); };
   return <div className="services-menu" ref={menuRef}>
-    <button className="services-menu-trigger" onClick={() => setOpen((value) => !value)} onMouseEnter={() => setOpen(true)} onFocus={() => setOpen(true)} aria-expanded={open}>
+    <button className="services-menu-trigger" onClick={() => { if (!open) openMenu(); else setOpen(false); }} onMouseEnter={openMenu} onFocus={openMenu} aria-expanded={open}>
       Services <ChevronDown size={15} />
     </button>
     {open && <div className="services-mega-panel">
