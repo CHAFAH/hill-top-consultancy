@@ -1,11 +1,14 @@
 import { ChevronDown, ArrowUpRight } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { serviceGroups } from "@/lib/serviceCatalog";
 
 export default function ServicesMegaMenu() {
   const [open, setOpen] = useState(false);
-  return <div className="services-menu" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
-    <button className="services-menu-trigger" onClick={() => setOpen((value) => !value)} onFocus={() => setOpen(true)} aria-expanded={open}>
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const openMenu = () => { if (closeTimer.current) clearTimeout(closeTimer.current); setOpen(true); };
+  const scheduleClose = () => { if (closeTimer.current) clearTimeout(closeTimer.current); closeTimer.current = setTimeout(() => setOpen(false), 260); };
+  return <div className="services-menu" onMouseEnter={openMenu} onMouseLeave={scheduleClose}>
+    <button className="services-menu-trigger" onClick={() => setOpen((value) => !value)} onFocus={openMenu} aria-expanded={open}>
       Services <ChevronDown size={15} />
     </button>
     {open && <div className="services-mega-panel">

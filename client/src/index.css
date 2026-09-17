@@ -327,6 +327,7 @@ button { border: 0; background: transparent; }
 
 /* Services mega menu and service pages */
 .services-menu { position: relative; }
+.services-menu::after { content: ''; position: absolute; z-index: 24; top: 100%; left: -12px; right: -12px; height: 16px; }
 .services-menu-trigger { display: inline-flex; align-items: center; gap: 6px; padding: 0; color: white; font: inherit; font-size: 16px; font-weight: 700; white-space: nowrap; cursor: pointer; }
 .inner-nav .services-menu-trigger { color: var(--ink); }
 .services-mega-panel { position: fixed; z-index: 25; top: 76px; left: 50%; display: grid; grid-template-columns: 265px 1fr; width: min(1100px, calc(100vw - 40px)); max-height: calc(100vh - 96px); overflow: auto; transform: translateX(-50%); color: var(--ink); background: rgba(255,255,255,.98); border: 1px solid rgba(0,0,0,.1); box-shadow: 0 24px 80px rgba(0,0,0,.24); }
