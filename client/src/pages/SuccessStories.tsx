@@ -14,9 +14,9 @@ const stories = [
 ];
 
 const storyVisuals: Record<string, { image: string; diagram: string; alt: string }> = {
-  "ai-engineering-acceleration": { image: "/assets/case-saas.jpg", diagram: "/assets/diagram-ai-engineering.png", alt: "Software engineering team working with a connected cloud architecture" },
-  "transportation-delivery-modernization": { image: "/assets/case-transportation.jpg", diagram: "/assets/diagram-transportation.png", alt: "Transportation operations control room with connected delivery routes" },
-  "housing-platform-reliability": { image: "/assets/case-housing-cloud.jpg", diagram: "/assets/diagram-cloud-migration.png", alt: "Apartment community connected to a secure cloud platform" },
+  "ai-engineering-acceleration": { image: "/assets/case-saas.webp", diagram: "/assets/diagram-ai-engineering.png", alt: "Software engineering team working with a connected cloud architecture" },
+  "transportation-delivery-modernization": { image: "/assets/case-transportation.webp", diagram: "/assets/diagram-transportation.png", alt: "Transportation operations control room with connected delivery routes" },
+  "housing-platform-reliability": { image: "/assets/case-housing-cloud.webp", diagram: "/assets/diagram-cloud-migration.png", alt: "Apartment community connected to a secure cloud platform" },
 };
 
 function StoryHeader() {
