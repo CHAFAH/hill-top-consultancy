@@ -963,3 +963,8 @@ button { border: 0; background: transparent; }
 .application-success svg { color: #e5531a; }
 .application-success h3 { color: #13253b; font-size: 25px; }
 @media (max-width: 850px) { .job-detail-layout { grid-template-columns: 1fr; } .job-application-card { position: static; } .job-detail-hero { padding-top: 125px; } }
+
+.case-card { color: inherit; text-decoration: none; }
+.case-card:hover h3, .case-card:hover p { color: inherit; }
+.story-pdf-link { display: inline-flex; align-items: center; gap: 9px; width: fit-content; margin-top: 30px; padding: 13px 17px; background: white; color: #13253b; font-size: 13px; font-weight: 800; text-decoration: none; }
+.story-pdf-link:hover { background: #13253b; color: white; }

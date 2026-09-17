@@ -47,9 +47,9 @@ const services = [
 ];
 
 const caseStudies = [
-  "A SaaS company. 250 engineers. Zero AI usage to 28% AI-generated code in six weeks. Code review time down 42%.",
-  "A US transportation company. 140 engineers. Velocity up 27%. Test coverage from 55% to 81%. Hotfix deployment time down 70%.",
-  "A housing management platform. 150+ engineers. Regression testing from three days to four hours. Incident resolution down 87.5%.",
+  ["ai-engineering-acceleration", "A SaaS company. 250 engineers. Zero AI usage to 28% AI-generated code in six weeks. Code review time down 42%."],
+  ["transportation-delivery-modernization", "A US transportation company. 140 engineers. Velocity up 27%. Test coverage from 55% to 81%. Hotfix deployment time down 70%."],
+  ["housing-platform-reliability", "A housing management platform. 150+ engineers. Regression testing from three days to four hours. Incident resolution down 87.5%."],
 ];
 
 const partnerLogos = [
@@ -231,12 +231,12 @@ export default function Home() {
         </section>
 
         <section className="case-studies content-width">
-          {caseStudies.map((copy, index) => (
-            <article className="case-card" key={index}>
+          {caseStudies.map(([slug, copy], index) => (
+            <a className="case-card" href={`/success-stories/${slug}`} key={slug}>
               <span className="case-tag">Case study</span>
               <p>{copy}</p>
               <ArrowRight className="case-arrow" size={26} strokeWidth={1.1} />
-            </article>
+            </a>
           ))}
         </section>
 
