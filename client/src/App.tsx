@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import InnerPage from "./pages/InnerPage";
 import { ServiceDetailPage, ServiceGroupPage, ServicesIndex } from "./pages/ServicePages";
 import { AboutRouter } from "./pages/AboutPages";
+import { IndustryRouter } from "./pages/IndustryPages";
 
 export default function App() {
   return <Switch>
@@ -12,7 +13,8 @@ export default function App() {
     <Route path="/services"><ServicesIndex /></Route>
     <Route path="/about/:slug"><AboutRouter /></Route>
     <Route path="/about"><AboutRouter /></Route>
-    <Route path="/industries"><InnerPage page="industries" /></Route>
+    <Route path="/industries/:slug"><IndustryRouter /></Route>
+    <Route path="/industries"><IndustryRouter /></Route>
     <Route path="/insights"><InnerPage page="insights" /></Route>
     <Route path="/contact"><InnerPage page="contact" /></Route>
     <Route><InnerPage page="services" /></Route>
