@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { allServices, slugify } from "@/lib/serviceCatalog";
 import { insights } from "@/lib/insightSearchData";
 
-type SearchResult = { title: string; type: string; href: string; description: string };
+type SearchResult = { title: string; type: string; href: string; description: string; keywords?: string };
 const RECENT_KEY = "hilltop-recent-searches";
 const popularSearches = ["Cloud migration", "AI agents", "DevOps", "Data security", "Kubernetes"];
 const synonyms: Record<string, string[]> = {
@@ -21,8 +21,10 @@ const staticResults: SearchResult[] = [
   { title: "Kubernetes platform engineering", type: "Capability", href: "/services/cloud-solutions-and-consulting/cloud-infrastructure-management", description: "Kubernetes, container platforms, DevOps automation, and reliable infrastructure operations." },
   { title: "Industries", type: "Overview", href: "/industries", description: "Industry-led technology solutions for finance, healthcare, retail, manufacturing, and more." },
   { title: "Success stories", type: "Case studies", href: "/success-stories", description: "Delivery stories showing measurable outcomes across AI, cloud, and software engineering." },
-  { title: "About Hill-Top", type: "Company", href: "/about", description: "Our company overview, leadership, partnerships, clients, careers, and impact." },
-  { title: "Contact Hill-Top Consultancy", type: "Contact", href: "/contact", description: "Start a conversation about your cloud, DevOps, AI, or software delivery challenge." },
+  { title: "About Hill-Top", type: "Company", href: "/about", description: "Our company overview, leadership, partnerships, clients, careers, and impact.", keywords: "Hill Top Consultancy company overview about us" },
+  { title: "Prince CHAFAH Sani — CEO & Founder", type: "Leadership", href: "/about/leadership-team", description: "Meet Prince CHAFAH Sani, CEO and Founder of Hill-Top Consultancy.", keywords: "Sani Prince Chafah CEO founder leadership LinkedIn GitHub" },
+  { title: "Hill-Top Consultancy contact", type: "Contact", href: "/contact", description: "Contact Hill-Top Consultancy by email, phone, or inquiry form.", keywords: "Sani contact email phone location Denmark CVR 44814544" },
+  { title: "Careers at Hill-Top Consultancy", type: "Careers", href: "/careers", description: "Explore open roles and join the Hill-Top Consultancy team.", keywords: "jobs hiring work employment careers" },
 ];
 
 const normalize = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
@@ -54,9 +56,9 @@ export default function GlobalSearch() {
   const [query, setQuery] = useState("");
   const [recent, setRecent] = useState<string[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
-  const services = useMemo(() => allServices.map((service) => ({ title: service.name, type: "Service", href: `/services/${slugify(service.group)}/${service.slug}`, description: "Explore detailed capabilities, deliverables, outcomes, and our approach." })), []);
-  const searchable = useMemo(() => [...insights, ...services, ...staticResults], [services]);
-  const results = useMemo(() => query.trim() ? searchable.filter((item) => matchesQuery(`${item.title} ${item.type} ${item.description}`, query)).slice(0, 8) : staticResults.slice(0, 4), [query, searchable]);
+  const services = useMemo<SearchResult[]>(() => allServices.map((service) => ({ title: service.name, type: "Service", href: `/services/${slugify(service.group)}/${service.slug}`, description: "Explore detailed capabilities, deliverables, outcomes, and our approach." })), []);
+  const searchable = useMemo<SearchResult[]>(() => [...insights, ...services, ...staticResults], [services]);
+  const results = useMemo(() => query.trim() ? searchable.filter((item) => matchesQuery(`${item.title} ${item.type} ${item.description} ${item.keywords ?? ""}`, query)).slice(0, 8) : staticResults.slice(0, 4), [query, searchable]);
 
   useEffect(() => {
     try { setRecent(JSON.parse(localStorage.getItem(RECENT_KEY) ?? "[]")); } catch { setRecent([]); }
