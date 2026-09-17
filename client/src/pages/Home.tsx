@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import GlobalSearch from "@/components/GlobalSearch";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -139,15 +140,6 @@ function AppButton({ children, outline = false, href = "#contact" }: { children:
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-
-  function submitSearch(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const query = searchQuery.trim();
-    window.location.href = query ? `/insights?q=${encodeURIComponent(query)}` : "/insights";
-  }
-
   return (
     <div className="site-shell">
       <header className="site-header">
@@ -160,8 +152,7 @@ export default function Home() {
           <a href="/insights">Insights <ChevronDown size={15} /></a>
         </nav>
         <div className="header-actions">
-          {searchOpen && <form className="header-search-form" onSubmit={submitSearch}><input autoFocus value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} placeholder="Search insights" aria-label="Search insights" /></form>}
-          <button className="icon-button search-button" aria-label="Search" onClick={() => setSearchOpen((open) => !open)}><Search size={20} /></button>
+          <GlobalSearch />
           <Sparkles className="sparkle" size={18} />
           <a className="contact-button" href="/contact">Contact us</a>
           <button className="icon-button mobile-menu-button" aria-label="Open menu" onClick={() => setMenuOpen(true)}><Menu size={24} /></button>
