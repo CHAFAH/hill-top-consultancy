@@ -110,7 +110,7 @@ export default function Home() {
   return (
     <div className="site-shell">
       <header className="site-header">
-        <a className="wordmark hilltop-wordmark" href="#top" aria-label="Hill-Top Consultancy home">Hill-Top</a>
+        <a className="wordmark hilltop-wordmark" href="#top" aria-label="Hill-Top Consultancy home">Hill-Top Consultancy</a>
         <div className="header-actions">
           <button className="icon-button search-button" aria-label="Search"><Search size={20} /></button>
           <Sparkles className="sparkle" size={18} />
@@ -122,7 +122,7 @@ export default function Home() {
       {menuOpen && (
         <div className="menu-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
           <button className="drawer-close" aria-label="Close menu" onClick={() => setMenuOpen(false)}><X size={26} /></button>
-          <p className="eyebrow">Hill-Top / consultancy</p>
+          <p className="eyebrow">Hill-Top Consultancy / consultancy</p>
           <nav>
             {[['What we do', '#what-we-do'], ['The AI Engineering Index', '#research'], ['Our approach', '#phases'], ['Contact us', '#contact']].map(([label, href]) => (
               <a key={href} href={href} onClick={() => setMenuOpen(false)}>{label}<ArrowUpRight size={22} /></a>
@@ -136,7 +136,7 @@ export default function Home() {
         <section className="hero-section">
           <ParticleField />
           <div className="hero-content">
-            <p className="eyebrow light">Hill-Top / engineering, elevated</p>
+            <p className="eyebrow light">Hill-Top Consultancy / engineering, elevated</p>
             <h1>Pragmatic Cloud<br />&amp; DevOps Consulting</h1>
             <p className="hero-copy">Hill-Top Consultancy helps ambitious teams build secure, scalable digital platforms across cloud, DevOps, Kubernetes, and modern software delivery.</p>
             <div className="hero-actions">
@@ -182,7 +182,7 @@ export default function Home() {
             <div className="workwave-logo"><span>W</span> WORKWAVE<sup>®</sup></div>
             <div className="quote-content">
               <div className="quote-mark">“</div>
-              <p>What surprised me was how quickly Hill-Top turned a complex cloud challenge into a clear operating model.<br />The team brought our developers, platform engineers, and security stakeholders together around practical standards that could be adopted across the organisation.</p>
+              <p>What surprised me was how quickly Hill-Top Consultancy turned a complex cloud challenge into a clear operating model.<br />The team brought our developers, platform engineers, and security stakeholders together around practical standards that could be adopted across the organisation.</p>
               <strong>Greg Svitak</strong>
               <span>Chief Software Architect, WorkWave</span>
             </div>
@@ -249,7 +249,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="footer"><div className="content-width"><a className="wordmark dark hilltop-wordmark" href="#top">Hill-Top</a><p>Pragmatic cloud and DevOps consultancy for modern teams.</p><span>© 2026 Hill-Top Consultancy. Built for confident delivery.</span></div></footer>
+      <footer className="footer"><div className="content-width"><a className="wordmark dark hilltop-wordmark" href="#top">Hill-Top Consultancy</a><p>Pragmatic cloud and DevOps consultancy for modern teams.</p><span>© 2026 Hill-Top Consultancy. Built for confident delivery.</span></div></footer>
     </div>
   );
 }
