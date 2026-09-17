@@ -2,6 +2,7 @@ import { Route, Switch } from "wouter";
 import Home from "./pages/Home";
 import InnerPage from "./pages/InnerPage";
 import { ServiceDetailPage, ServiceGroupPage, ServicesIndex } from "./pages/ServicePages";
+import { AboutRouter } from "./pages/AboutPages";
 
 export default function App() {
   return <Switch>
@@ -9,7 +10,8 @@ export default function App() {
     <Route path="/services/:groupSlug/:serviceSlug">{(params) => <ServiceDetailPage groupSlug={params.groupSlug} serviceSlug={params.serviceSlug} />}</Route>
     <Route path="/services/:groupSlug">{(params) => <ServiceGroupPage groupSlug={params.groupSlug} />}</Route>
     <Route path="/services"><ServicesIndex /></Route>
-    <Route path="/about"><InnerPage page="about" /></Route>
+    <Route path="/about/:slug"><AboutRouter /></Route>
+    <Route path="/about"><AboutRouter /></Route>
     <Route path="/industries"><InnerPage page="industries" /></Route>
     <Route path="/insights"><InnerPage page="insights" /></Route>
     <Route path="/contact"><InnerPage page="contact" /></Route>

@@ -13,4 +13,4 @@ export default function SiteMegaMenu({ label, href, intro, title, items }: SiteM
 }
 
 export const industryItems: MenuItem[] = ["Finance", "Retail", "Healthcare", "Manufacturing", "Telecom", "Energy & Utilities", "Logistics & Supply Chain", "Automotive", "Agritech", "Game Development"].map((name) => ({ name, href: `/industries#${name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}` }));
-export const aboutItems: MenuItem[] = ["Company Overview", "Leadership Team", "Industry Recognitions", "Partnerships", "Clients", "Careers", "News", "Events", "Our impact", "Press kit"].map((name) => ({ name, href: `/about#${name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}` }));
+export const aboutItems: MenuItem[] = ["Company Overview", "Leadership Team", "Industry Recognitions", "Partnerships", "Clients", "Careers", "News", "Events", "Our impact", "Press kit"].map((name) => ({ name, href: `/about/${name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}` }));
