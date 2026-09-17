@@ -114,7 +114,7 @@ export default function Home() {
         <div className="header-actions">
           <button className="icon-button search-button" aria-label="Search"><Search size={20} /></button>
           <Sparkles className="sparkle" size={18} />
-          <a className="contact-button" href="#contact">Contact us</a>
+          <a className="contact-button" href="/contact">Contact us</a>
           <button className="icon-button" aria-label="Open menu" onClick={() => setMenuOpen(true)}><Menu size={24} /></button>
         </div>
       </header>
@@ -124,7 +124,7 @@ export default function Home() {
           <button className="drawer-close" aria-label="Close menu" onClick={() => setMenuOpen(false)}><X size={26} /></button>
           <p className="eyebrow">Hill-Top Consultancy / consultancy</p>
           <nav>
-            {[['What we do', '#what-we-do'], ['The AI Engineering Index', '#research'], ['Our approach', '#phases'], ['Contact us', '#contact']].map(([label, href]) => (
+            {[['Services', '/services'], ['About Hill-Top', '/about'], ['Insights', '/insights'], ['Contact us', '/contact']].map(([label, href]) => (
               <a key={href} href={href} onClick={() => setMenuOpen(false)}>{label}<ArrowUpRight size={22} /></a>
             ))}
           </nav>
@@ -140,8 +140,8 @@ export default function Home() {
             <h1>Pragmatic Cloud<br />&amp; DevOps Consulting</h1>
             <p className="hero-copy">Hill-Top Consultancy helps ambitious teams build secure, scalable digital platforms across cloud, DevOps, Kubernetes, and modern software delivery.</p>
             <div className="hero-actions">
-              <AppButton href="#phases">Audit your AI. Then decide.</AppButton>
-              <AppButton outline href="#contact">Assess your AI maturity</AppButton>
+              <AppButton href="/services">Explore our services</AppButton>
+              <AppButton outline href="/contact">Assess your AI maturity</AppButton>
             </div>
           </div>
           <div className="hero-bottom-fade" />
@@ -216,21 +216,21 @@ export default function Home() {
           <div className="partner-row">
             {partnerMarks.map((partner) => <div className="partner-mark" key={partner.name} style={{ '--mark-color': partner.color } as React.CSSProperties}><b>{partner.name}</b><small>{partner.sub}</small></div>)}
           </div>
-          <a href="#contact" className="orange-cta">Explore our partnerships <ArrowUpRight size={14} /></a>
+            <a href="/contact" className="orange-cta">Explore our partnerships <ArrowUpRight size={14} /></a>
         </section>
 
         <section className="what-we-do" id="what-we-do">
           <div className="content-width">
             <h2>What we do</h2>
             <div className="services-grid">
-              {services.map(([title, copy]) => <article key={title}><h3>{title}</h3><p>{copy}</p><a href="#contact" aria-label={`Learn more about ${title}`}><ArrowUpRight size={17} /></a></article>)}
+              {services.map(([title, copy]) => <article key={title}><h3>{title}</h3><p>{copy}</p><a href="/services" aria-label={`Learn more about ${title}`}><ArrowUpRight size={17} /></a></article>)}
             </div>
           </div>
         </section>
 
         <section className="outcomes-section content-width">
           <div className="section-kicker">Everything we do</div>
-          <div className="outcomes-heading"><h2>Client outcomes<br />by industry</h2><a href="#contact" className="text-link">View all industries <ArrowRight size={16} /></a></div>
+          <div className="outcomes-heading"><h2>Client outcomes<br />by industry</h2><a href="/insights" className="text-link">View all industries <ArrowRight size={16} /></a></div>
           <div className="outcomes-grid">
             {[['Retail / E-commerce', '100M+', 'end users served daily'], ['Finance', '$400M', 'in account balances processed monthly'], ['Manufacturing', '450+', 'warehouses automated'], ['Logistics', '10 min', 'vessel scheduling reduced from 4 hours']].map(([industry, stat, desc]) => <article key={industry}><span>{industry}</span><strong>{stat}</strong><p>{desc}</p></article>)}
           </div>
