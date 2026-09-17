@@ -122,6 +122,8 @@ button { border: 0; background: transparent; }
 
 .testimonial-section { background: var(--mist); }
 .testimonial { display: grid; grid-template-columns: 28% 1fr; gap: 8%; padding: 76px 0 80px; align-items: center; }
+.testimonial-logo-wrap { display: flex; align-items: center; justify-content: center; width: fit-content; min-width: 240px; min-height: 82px; padding: 10px 15px; background: #111; }
+.testimonial-logo { display: block; width: 218px; height: auto; }
 .workwave-logo { color: #112538; font-size: 20px; font-weight: 700; letter-spacing: -1px; }
 .workwave-logo span { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; margin-right: 3px; border-radius: 50%; background: #133f6b; color: white; font-size: 15px; }
 .workwave-logo sup { font-size: 7px; }

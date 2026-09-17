@@ -195,12 +195,12 @@ export default function Home() {
 
         <section className="testimonial-section">
           <div className="testimonial content-width">
-            <div className="workwave-logo"><span>W</span> WORKWAVE<sup>®</sup></div>
+            <div className="testimonial-logo-wrap"><img className="testimonial-logo" src="/manus-storage/logo-white_887f124c.png" alt="TRANZAK SARL" /></div>
             <div className="quote-content">
               <div className="quote-mark">“</div>
-              <p>What surprised me was how quickly Hill-Top Consultancy turned a complex cloud challenge into a clear operating model.<br />The team brought our developers, platform engineers, and security stakeholders together around practical standards that could be adopted across the organisation.</p>
-              <strong>Greg Svitak</strong>
-              <span>Chief Software Architect, WorkWave</span>
+              <p>What stood out was how quickly Hill-Top Consultancy turned a complex technology challenge into a clear operating model.<br />The team brought our people, platforms, and security priorities together around practical standards we could adopt across the organisation.</p>
+              <strong>Ntui Daniel</strong>
+              <span>CEO, TRANZAK SARL</span>
             </div>
           </div>
         </section>
