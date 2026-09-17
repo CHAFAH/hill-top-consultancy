@@ -27,6 +27,7 @@ button { border: 0; background: transparent; }
 
 .site-header { position: absolute; z-index: 5; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 20px 22px; color: #fff; }
 .wordmark { font-family: var(--display); font-size: 31px; font-weight: 700; letter-spacing: -2px; line-height: 1; }
+.hilltop-wordmark { font-size: clamp(21px, 2.4vw, 31px); letter-spacing: -1.5px; }
 .header-actions { display: flex; gap: 16px; align-items: center; }
 .icon-button { color: currentColor; display: inline-flex; align-items: center; justify-content: center; padding: 5px; transition: transform .2s ease, opacity .2s ease; }
 .icon-button:hover { transform: translateY(-2px); opacity: .8; }

@@ -110,7 +110,7 @@ export default function Home() {
   return (
     <div className="site-shell">
       <header className="site-header">
-        <a className="wordmark" href="#top" aria-label="N-iX home">N-iX</a>
+        <a className="wordmark hilltop-wordmark" href="#top" aria-label="Hill-Top Consultancy home">Hill-Top</a>
         <div className="header-actions">
           <button className="icon-button search-button" aria-label="Search"><Search size={20} /></button>
           <Sparkles className="sparkle" size={18} />
@@ -122,13 +122,13 @@ export default function Home() {
       {menuOpen && (
         <div className="menu-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
           <button className="drawer-close" aria-label="Close menu" onClick={() => setMenuOpen(false)}><X size={26} /></button>
-          <p className="eyebrow">N-iX / AI engineering</p>
+          <p className="eyebrow">Hill-Top / consultancy</p>
           <nav>
             {[['What we do', '#what-we-do'], ['The AI Engineering Index', '#research'], ['Our approach', '#phases'], ['Contact us', '#contact']].map(([label, href]) => (
               <a key={href} href={href} onClick={() => setMenuOpen(false)}>{label}<ArrowUpRight size={22} /></a>
             ))}
           </nav>
-          <div className="drawer-note">Pragmatic AI software engineering for teams that need the numbers to move.</div>
+          <div className="drawer-note">Cloud, DevOps, Kubernetes, security, and software delivery for teams ready to move with confidence.</div>
         </div>
       )}
 
@@ -136,9 +136,9 @@ export default function Home() {
         <section className="hero-section">
           <ParticleField />
           <div className="hero-content">
-            <p className="eyebrow light">N-iX / engineering, measured</p>
-            <h1>Pragmatic AI<br />Software Engineering</h1>
-            <p className="hero-copy">N-iX helps enterprises turn AI investment into measurable engineering results, backed by 24 years of software, cloud, data, and security delivery.</p>
+            <p className="eyebrow light">Hill-Top / engineering, elevated</p>
+            <h1>Pragmatic Cloud<br />&amp; DevOps Consulting</h1>
+            <p className="hero-copy">Hill-Top Consultancy helps ambitious teams build secure, scalable digital platforms across cloud, DevOps, Kubernetes, and modern software delivery.</p>
             <div className="hero-actions">
               <AppButton href="#phases">Audit your AI. Then decide.</AppButton>
               <AppButton outline href="#contact">Assess your AI maturity</AppButton>
@@ -161,7 +161,7 @@ export default function Home() {
             <div><b>For CTOs</b><p>Engineers are faster.<br />Sprints are not.</p></div>
             <div><b>For CIOs</b><p>AI tools are live but disconnected<br className="desktop-only" /> from the cloud, data, and security<br className="desktop-only" /> infrastructure they depend on.</p></div>
           </div>
-          <p className="intro-note">Pragmatic AI Software Engineering is N-iX's position on both, measured on your actual codebase, connected to your actual infrastructure, before it scales.</p>
+          <p className="intro-note">Hill-Top Consultancy connects your engineering goals to the cloud, platforms, data, and security foundations needed to scale with confidence.</p>
         </section>
 
         <section className="phases-section content-width" id="phases">
@@ -182,7 +182,7 @@ export default function Home() {
             <div className="workwave-logo"><span>W</span> WORKWAVE<sup>®</sup></div>
             <div className="quote-content">
               <div className="quote-mark">“</div>
-              <p>What surprised me was how far the APEX framework reached beyond engineering.<br />By month four, our business analysts, our QA team, and our developers were all running AI workflows. That's what got us into the top 5% on GenAI adoption within the EQT Group. We're still maturing our AI lifecycle, but N-iX gave us a spec-driven way of working that the rest of the organisation could pick up.</p>
+              <p>What surprised me was how quickly Hill-Top turned a complex cloud challenge into a clear operating model.<br />The team brought our developers, platform engineers, and security stakeholders together around practical standards that could be adopted across the organisation.</p>
               <strong>Greg Svitak</strong>
               <span>Chief Software Architect, WorkWave</span>
             </div>
@@ -203,8 +203,8 @@ export default function Home() {
           <div className="research-inner content-width">
             <div>
               <span className="white-tag">Research</span>
-              <h2>N-iX Engineering Index<br />2026</h2>
-              <p>96% of developers don't fully trust AI-generated code. Only 48% verify it. See the data, and what to do about it.</p>
+              <h2>Hill-Top Cloud Index<br />2026</h2>
+              <p>Practical signals for stronger cloud foundations, faster delivery, and the security decisions that matter as you scale.</p>
             </div>
             <a className="research-button" href="#contact">Download the report <ArrowUpRight size={16} /></a>
           </div>
@@ -212,7 +212,7 @@ export default function Home() {
 
         <section className="partnerships content-width">
           <h2>Certified partnerships with the platforms your teams already run</h2>
-          <p>N-iX holds 350+ active certifications across Microsoft, AWS, Google Cloud, Palantir, SAP, and Snowflake, with specialist depth in manufacturing, finance, retail, and robotics.</p>
+          <p>Hill-Top Consultancy helps teams make the most of the platforms they already run, with practical depth across Microsoft, AWS, Google Cloud, Kubernetes, and modern data foundations.</p>
           <div className="partner-row">
             {partnerMarks.map((partner) => <div className="partner-mark" key={partner.name} style={{ '--mark-color': partner.color } as React.CSSProperties}><b>{partner.name}</b><small>{partner.sub}</small></div>)}
           </div>
@@ -249,7 +249,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="footer"><div className="content-width"><a className="wordmark dark" href="#top">N-iX</a><p>Pragmatic AI software engineering for enterprise teams.</p><span>© 2026 N-iX. Built for measurable progress.</span></div></footer>
+      <footer className="footer"><div className="content-width"><a className="wordmark dark hilltop-wordmark" href="#top">Hill-Top</a><p>Pragmatic cloud and DevOps consultancy for modern teams.</p><span>© 2026 Hill-Top Consultancy. Built for confident delivery.</span></div></footer>
     </div>
   );
 }
