@@ -22,9 +22,17 @@ export default function SiteMegaMenu({ label, href, intro, title, items }: SiteM
     return () => { window.removeEventListener("mega-menu-open", closeWhenAnotherMenuOpens); document.removeEventListener("pointerdown", closeWhenOutside); document.removeEventListener("keydown", closeOnEscape); };
   }, [menuKey]);
   const openMenu = () => { window.dispatchEvent(new CustomEvent("mega-menu-open", { detail: menuKey })); setOpen(true); };
+  const moveBetweenMenus = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+    event.preventDefault();
+    const triggers = Array.from(document.querySelectorAll<HTMLButtonElement>("[data-mega-menu-trigger]"));
+    const current = triggers.indexOf(event.currentTarget);
+    const next = event.key === "ArrowRight" ? (current + 1) % triggers.length : (current - 1 + triggers.length) % triggers.length;
+    triggers[next]?.focus();
+  };
   return <div className="services-menu" ref={menuRef}>
-    <button className="services-menu-trigger" onClick={() => { if (!open) openMenu(); else setOpen(false); }} onMouseEnter={openMenu} onFocus={openMenu} aria-expanded={open}>{label} <ChevronDown size={15} /></button>
-    {open && <div className="simple-mega-panel"><div className="services-mega-intro"><span className="eyebrow">{intro}</span><h2>{title}</h2><a href={href} onClick={() => setOpen(false)}>View overview <ArrowUpRight size={16} /></a></div><div className="simple-mega-items">{items.map((item) => <a href={item.href} onClick={() => setOpen(false)} key={item.href}>{item.name}<ArrowUpRight size={15} /></a>)}</div></div>}
+    <button className="services-menu-trigger" data-mega-menu-trigger={menuKey} onKeyDown={moveBetweenMenus} onClick={() => { if (!open) openMenu(); else setOpen(false); }} onMouseEnter={openMenu} onFocus={openMenu} aria-expanded={open} aria-controls={`mega-panel-${menuKey}`}>{label} <ChevronDown size={15} /></button>
+    <div id={`mega-panel-${menuKey}`} className={`simple-mega-panel ${open ? "is-open" : ""}`} aria-hidden={!open} inert={!open}><div className="services-mega-intro"><span className="eyebrow">{intro}</span><h2>{title}</h2><a href={href} onClick={() => setOpen(false)}>View overview <ArrowUpRight size={16} /></a></div><div className="simple-mega-items">{items.map((item) => <a href={item.href} onClick={() => setOpen(false)} key={item.href}>{item.name}<ArrowUpRight size={15} /></a>)}</div></div>
   </div>;
 }
 

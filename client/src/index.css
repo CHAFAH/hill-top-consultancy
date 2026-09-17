@@ -692,3 +692,16 @@ button { border: 0; background: transparent; }
   .insight-author-profile { align-items: start; flex-wrap: wrap; }
   .pdf-link { margin-left: 0; }
 }
+
+/* Mega-menu motion and accessible state transitions */
+.services-mega-panel, .simple-mega-panel { opacity: 0; visibility: hidden; pointer-events: none; transform: translateX(-50%) translateY(-9px); transition: opacity .2s cubic-bezier(.23,1,.32,1), transform .24s cubic-bezier(.23,1,.32,1), visibility 0s linear .24s; }
+.services-mega-panel.is-open, .simple-mega-panel.is-open { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); transition-delay: 0s; }
+.services-menu-trigger svg { transition: transform .2s cubic-bezier(.23,1,.32,1); }
+.services-menu-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+@media (max-width: 800px) {
+  .services-mega-panel, .simple-mega-panel { transform: translateX(-50%) translateY(-7px); }
+  .services-mega-panel.is-open, .simple-mega-panel.is-open { transform: translateX(-50%) translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .services-mega-panel, .simple-mega-panel, .services-menu-trigger svg { transition: none; }
+}
