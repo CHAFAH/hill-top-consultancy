@@ -4,13 +4,18 @@ import fs from "node:fs";
 
 export const config = { api: { bodyParser: false } };
 
-const recipients = [
-  "admin@hilltopconsultancy.com",
-  "info@hilltopconsultancy.com",
-  "contact@hilltopconsultancy.com",
-  "support@hilltopconsultancy.com",
-  "consult@hilltopconsultancy.com",
-];
+const serviceRecipients = {
+  "AI-Augmented Development": "consult@hilltopconsultancy.com",
+  "AI Consulting and Implementation": "consult@hilltopconsultancy.com",
+  "AI Agent Development": "consult@hilltopconsultancy.com",
+  "Software Product Engineering": "contact@hilltopconsultancy.com",
+  "Cloud Solutions and Consulting": "support@hilltopconsultancy.com",
+  "DevOps and Kubernetes": "support@hilltopconsultancy.com",
+  "Data and Analytics": "info@hilltopconsultancy.com",
+  "Security and Quality": "support@hilltopconsultancy.com",
+  "Mobile App Development": "contact@hilltopconsultancy.com",
+  Other: "contact@hilltopconsultancy.com",
+};
 
 const serviceReplies = {
   "AI-Augmented Development": "AI-augmented delivery and practical engineering acceleration",
@@ -52,7 +57,7 @@ export default async function handler(req, res) {
     const transporter = nodemailer.createTransport({ host: "smtp.migadu.com", port: 465, secure: true, auth: { user: process.env.MIGADU_SMTP_USER, pass: process.env.MIGADU_SMTP_PASSWORD } });
     const subject = `New Hill-Top inquiry: ${service} — ${company}`;
     const detailText = `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nLocation: ${location}\nPhone: ${phone || "Not provided"}\nRequested service: ${service}\nHow they found us: ${source || "Not provided"}\n\nMessage:\n${message}`;
-    await transporter.sendMail({ from: `Hill-Top Consultancy <${process.env.MIGADU_SMTP_USER}>`, to: recipients.join(","), replyTo: email, subject, text: detailText, attachments: files });
+    await transporter.sendMail({ from: `Hill-Top Consultancy <${process.env.MIGADU_SMTP_USER}>`, to: serviceRecipients[service] || "contact@hilltopconsultancy.com", replyTo: email, subject, text: detailText, attachments: files });
     const replyTopic = serviceReplies[service] || service.toLowerCase();
     await transporter.sendMail({ from: `Hill-Top Consultancy <${process.env.MIGADU_SMTP_USER}>`, to: email, replyTo: process.env.MIGADU_SMTP_USER, subject: `Thank you, ${name} — we received your Hill-Top inquiry`, text: `Hello ${name},\n\nThank you for contacting Hill-Top Consultancy about ${replyTopic}. We have received your message and our team will review it shortly. A consultant will follow up within one business day.\n\nYour request summary:\nCompany: ${company}\nLocation: ${location}\nService: ${service}\n\nBest regards,\nHill-Top Consultancy\nhilltopconsultancy.com\n${process.env.MIGADU_SMTP_USER}`, });
     files.forEach(({ path }) => { try { fs.unlinkSync(path); } catch {} });
