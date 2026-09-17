@@ -6,7 +6,7 @@ import SiteFooter from "@/components/SiteFooter";
 import ServicesMegaMenu from "@/components/ServicesMegaMenu";
 import SiteMegaMenu, { aboutItems, industryItems } from "@/components/SiteMegaMenu";
 
-const services = ["AI-Augmented Development", "AI Consulting and Implementation", "AI Agent Development", "Software Product Engineering", "Cloud Solutions and Consulting", "DevOps and Kubernetes", "Data and Analytics", "Security and Quality", "Mobile App Development", "Other"];
+const services = ["AI-Augmented Development", "AI Consulting and Implementation", "AI Agent Development", "Software Product Engineering", "Cloud Solutions and Consulting", "Cloud Migration", "DevOps and Kubernetes", "Data and Analytics", "Security and Quality", "Mobile App Development", "Other"];
 const discoveryOptions = ["Search engine", "AI tool", "Social media", "Event or conference", "Network recommendation", "Partner referral", "Other"];
 const offices = [
   ["Denmark", "Copenhagen", "Sylen 3, 2. sal, 2630 Taastrup", "09:00 local time"],
