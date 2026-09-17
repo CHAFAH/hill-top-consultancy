@@ -58,11 +58,47 @@ const groupDefaults: Record<string, Omit<ServiceDetail, "focus">> = {
   "game-development": { overview: "We support game and immersive teams with engineering, interaction, performance, and production expertise across the full player experience.", capabilities: ["Gameplay and systems engineering", "Multiplayer and backend services", "Performance and platform optimization", "Immersive interaction design"], deliverables: ["Playable vertical slice", "Production systems and services", "Performance test plan", "Release and live-ops readiness"], outcomes: ["More stable player experiences", "Faster iteration", "Better platform performance", "A stronger path to launch"] },
 };
 
+const serviceOverrides: Record<string, Omit<ServiceDetail, "focus">> = {
+  "cloud-migration": {
+    overview: "Plan and execute a controlled move to cloud platforms with clear workload sequencing, security guardrails, and measurable value. We support cloud-to-cloud moves, on-premises-to-cloud migrations, hybrid transitions, and application-aware modernization without losing sight of business continuity.",
+    capabilities: [
+      "Cloud migration strategy, business case, and target operating model",
+      "Discovery, dependency mapping, 6R workload assessment, and readiness scoring",
+      "On-premises data centre to AWS, Azure, or Google Cloud migration",
+      "Cloud-to-cloud migration across AWS, Azure, Google Cloud, and hybrid estates",
+      "Landing zone design, identity, networking, security guardrails, and policy-as-code",
+      "Application, database, storage, integration, and data migration planning",
+      "Wave planning, pilot migrations, factory execution, cutover, and rollback",
+      "FinOps baselines, observability, resilience testing, and post-migration optimization",
+    ],
+    deliverables: [
+      "Current-state inventory with application, data, dependency, and owner mapping",
+      "Cloud migration strategy with target architecture and decision criteria",
+      "Workload disposition plan covering rehost, replatform, refactor, retire, retain, and relocate",
+      "Business-prioritized migration roadmap with sequenced waves and critical-path dependencies",
+      "Secure cloud landing zone with identity, network, logging, backup, and governance controls",
+      "Migration runbooks, cutover checklists, rollback plans, and stakeholder communications",
+      "Validated pilot wave with operational handover and knowledge transfer",
+      "Post-migration cost, performance, reliability, and security improvement backlog",
+    ],
+    outcomes: [
+      "A migration path linked to business value rather than infrastructure movement alone",
+      "Lower migration risk through dependency-aware sequencing and rehearsed cutovers",
+      "Improved resilience, availability, scalability, and disaster-recovery readiness",
+      "More transparent cloud economics with measurable cost and usage baselines",
+      "Secure, governed cloud foundations that teams can use repeatedly",
+      "Less data-centre dependency and reduced operational burden from legacy platforms",
+      "Faster delivery through standardized platform services and automation",
+      "A sustainable operating model for continuous cloud modernization",
+    ],
+  },
+};
+
 export function getServiceDetail(groupSlug: string, serviceSlug: string): ServiceDetail {
   const group = groupDefaults[groupSlug] ?? groupDefaults["solutions"];
   const service = findService(serviceSlug);
   const serviceFocus = focus[serviceSlug] ?? `Deliver focused ${service?.name ?? "technology"} capabilities around your priorities, constraints, and growth plans.`;
-  return { focus: serviceFocus, ...group };
+  return { focus: serviceFocus, ...(serviceOverrides[serviceSlug] ?? group) };
 }
 
 export function relatedServices(groupSlug: string, serviceSlug: string) {
