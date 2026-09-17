@@ -153,11 +153,11 @@ export default function Home() {
           <ParticleField />
           <div className="hero-content">
             <p className="eyebrow light">Hill-Top Consultancy / engineering, elevated</p>
-            <h1>Pragmatic Cloud<br />&amp; DevOps Consulting</h1>
-            <p className="hero-copy">Hill-Top Consultancy helps ambitious teams build secure, scalable digital platforms across cloud, DevOps, Kubernetes, and modern software delivery.</p>
+            <h1><span>Pragmatic Cloud</span><span>&amp; DevOps Consulting</span></h1>
+            <p className="hero-copy"><span>Hill-Top Consultancy helps ambitious teams build secure, scalable digital platforms</span><span>across cloud, DevOps, Kubernetes, and modern software delivery.</span></p>
             <div className="hero-actions">
-              <AppButton href="/services">Explore our services</AppButton>
-              <AppButton outline href="/contact">Assess your AI maturity</AppButton>
+              <AppButton href="/services"><span>Explore our<br />services</span></AppButton>
+              <AppButton outline href="/contact"><span>Assess your AI<br />maturity</span></AppButton>
             </div>
           </div>
           <div className="hero-bottom-fade" />
