@@ -25,18 +25,20 @@ button { border: 0; background: transparent; }
 .content-width { width: min(100% - 64px, 1120px); margin: 0 auto; }
 .site-shell { overflow: hidden; }
 
-.site-header { position: fixed; z-index: 15; top: 0; left: 0; right: 0; display: grid; grid-template-columns: 320px 1fr auto; align-items: center; gap: 28px; padding: 9px max(22px, calc((100% - 1135px) / 2)); color: #fff; background: linear-gradient(180deg, rgba(116,22,5,.55), rgba(116,22,5,.18)); backdrop-filter: blur(8px); }
+.site-header { position: fixed; z-index: 15; top: 0; left: 0; right: 0; display: grid; grid-template-columns: 320px 1fr auto; align-items: center; gap: 28px; padding: 13px max(22px, calc((100% - 1135px) / 2)); color: #fff; background: linear-gradient(180deg, rgba(116,22,5,.55), rgba(116,22,5,.18)); backdrop-filter: blur(8px); }
 .wordmark { font-family: var(--display); font-size: 31px; font-weight: 700; letter-spacing: -2px; line-height: 1; }
 .hilltop-wordmark { font-size: clamp(19px, 2vw, 28px); letter-spacing: -1.5px; white-space: nowrap; }
 .desktop-nav { display: flex; align-items: center; justify-content: center; gap: clamp(20px, 3vw, 46px); }
-.desktop-nav a { display: inline-flex; align-items: center; gap: 6px; color: white; font-size: 14px; font-weight: 700; white-space: nowrap; transition: opacity .2s ease, transform .2s ease; }
+.desktop-nav a { display: inline-flex; align-items: center; gap: 6px; color: white; font-size: 16px; font-weight: 700; white-space: nowrap; transition: opacity .2s ease, transform .2s ease; }
 .desktop-nav a:hover { opacity: .72; transform: translateY(-1px); }
 .header-actions { display: flex; gap: 16px; align-items: center; }
 .icon-button { color: currentColor; display: inline-flex; align-items: center; justify-content: center; padding: 5px; transition: transform .2s ease, opacity .2s ease; }
 .icon-button:hover { transform: translateY(-2px); opacity: .8; }
 .search-button { margin-right: -18px; }
 .sparkle { margin: -17px -10px 0 -3px; }
-.contact-button { background: white; color: #161616; padding: 15px 32px; font-size: 13px; font-weight: 700; transition: transform .2s ease, background .2s ease; }
+.header-search-form input { width: 160px; padding: 10px 12px; border: 1px solid rgba(255,255,255,.6); outline: none; color: white; background: rgba(0,0,0,.16); font-size: 13px; }
+.header-search-form input::placeholder { color: rgba(255,255,255,.76); }
+.contact-button { background: white; color: #161616; padding: 17px 28px; font-size: 15px; font-weight: 700; white-space: nowrap; transition: transform .2s ease, background .2s ease; }
 .contact-button:hover { transform: translateY(-2px); background: #fff4ed; }
 .mobile-menu-button { display: none; }
 
@@ -76,6 +78,13 @@ button { border: 0; background: transparent; }
 .stat span { margin-top: 14px; font-size: 15px; font-weight: 700; }
 
 .brand-rail { display: flex; gap: clamp(34px, 6vw, 100px); align-items: center; min-height: 150px; padding: 20px max(32px, calc((100% - 1120px) / 2)); white-space: nowrap; overflow: hidden; }
+.brand-logo { display: block; width: auto; height: 38px; object-fit: contain; }
+.siemens-logo { width: 150px; }
+.ebay-logo { width: 100px; }
+.autoscout-logo { width: 142px; }
+.gogo-logo { width: 100px; }
+.fluke-logo { width: 105px; }
+.sap-logo { width: 82px; }
 .brand { display: inline-flex; flex-direction: column; align-items: center; font-size: clamp(21px, 2.4vw, 35px); font-family: Arial, sans-serif; font-weight: 700; letter-spacing: -1.5px; }
 .siemens { color: #08a2aa; letter-spacing: 0; }
 .ebay { color: #2e6ac1; font-weight: 500; }
@@ -257,7 +266,7 @@ button { border: 0; background: transparent; }
 
 /* Routed page system */
 .inner-page { min-height: 100vh; background: var(--paper); }
-.inner-header { position: fixed; z-index: 15; top: 0; left: 0; right: 0; display: grid; grid-template-columns: 320px 1fr auto; align-items: center; gap: 28px; padding: 9px max(22px, calc((100% - 1135px) / 2)); color: var(--ink); background: rgba(255,255,255,.92); border-bottom: 1px solid rgba(0,0,0,.08); backdrop-filter: blur(14px); }
+.inner-header { position: fixed; z-index: 15; top: 0; left: 0; right: 0; display: grid; grid-template-columns: 320px 1fr auto; align-items: center; gap: 28px; padding: 13px max(22px, calc((100% - 1135px) / 2)); color: var(--ink); background: rgba(255,255,255,.92); border-bottom: 1px solid rgba(0,0,0,.08); backdrop-filter: blur(14px); }
 .inner-nav a { color: var(--ink); }
 .inner-header-actions { display: flex; align-items: center; gap: 18px; }
 .inner-contact { background: var(--orange); color: white; }

@@ -35,6 +35,19 @@ const pageData = {
       ["Security as an enabler", "A practical way to move security conversations from late-stage blockers to shared design decisions."],
     ],
   },
+  industries: {
+    eyebrow: "Hill-Top Consultancy / industries",
+    title: "Technology decisions shaped around the work your industry demands.",
+    intro: "From regulated services to fast-moving product teams, we help organisations build platforms that respect their operating reality and create room for growth.",
+    cards: [
+      ["Financial services", "Build resilient, secure platforms for sensitive data, customer trust, and reliable digital operations."],
+      ["Manufacturing", "Connect modern cloud foundations to the systems, plants, and workflows that keep production moving."],
+      ["Retail and e-commerce", "Improve speed and resilience across customer journeys, commerce platforms, and operational data."],
+      ["Logistics", "Create dependable visibility and automation across complex, distributed supply-chain environments."],
+      ["Professional services", "Turn internal systems and delivery workflows into a foundation for better client outcomes."],
+      ["Public and regulated", "Balance modernisation with governance, security, accessibility, and long-term accountability."],
+    ],
+  },
   contact: {
     eyebrow: "Hill-Top Consultancy / contact",
     title: "Bring us the challenge that needs a clearer next step.",
@@ -51,7 +64,7 @@ const pageData = {
 type PageKey = keyof typeof pageData;
 
 function PageHeader({ onMenu }: { onMenu: () => void }) {
-  return <header className="inner-header"><a className="wordmark hilltop-wordmark" href="/" aria-label="Hill-Top Consultancy home">Hill-Top Consultancy</a><nav className="desktop-nav inner-nav" aria-label="Primary navigation"><a href="/services">Services <ChevronDown size={15} /></a><a href="/about">About us <ChevronDown size={15} /></a><a href="/insights">Success stories</a><a href="/insights">Insights <ChevronDown size={15} /></a></nav><div className="inner-header-actions"><a className="contact-button inner-contact" href="/contact">Contact us</a><button className="icon-button inner-menu-button" onClick={onMenu} aria-label="Open navigation"><Menu size={24} /></button></div></header>;
+  return <header className="inner-header"><a className="wordmark hilltop-wordmark" href="/" aria-label="Hill-Top Consultancy home">Hill-Top Consultancy</a><nav className="desktop-nav inner-nav" aria-label="Primary navigation"><a href="/services">Services <ChevronDown size={15} /></a><a href="/about">About us <ChevronDown size={15} /></a><a href="/industries">Industries <ChevronDown size={15} /></a><a href="/insights">Success stories</a><a href="/insights">Insights <ChevronDown size={15} /></a></nav><div className="inner-header-actions"><a className="contact-button inner-contact" href="/contact">Contact us</a><button className="icon-button inner-menu-button" onClick={onMenu} aria-label="Open navigation"><Menu size={24} /></button></div></header>;
 }
 
 export default function InnerPage({ page }: { page: PageKey }) {
@@ -59,7 +72,7 @@ export default function InnerPage({ page }: { page: PageKey }) {
   const content = pageData[page];
   return <div className="inner-page">
     <PageHeader onMenu={() => setMenuOpen(true)} />
-    {menuOpen && <div className="inner-menu"><button className="inner-menu-close" onClick={() => setMenuOpen(false)}>×</button><p className="eyebrow">Hill-Top Consultancy</p>{[['Services','/services'],['About Hill-Top','/about'],['Insights','/insights'],['Contact','/contact']].map(([label, href]) => <a href={href} key={href}>{label}<ArrowUpRight size={20} /></a>)}</div>}
+    {menuOpen && <div className="inner-menu"><button className="inner-menu-close" onClick={() => setMenuOpen(false)}>×</button><p className="eyebrow">Hill-Top Consultancy</p>{[['Services','/services'],['Industries','/industries'],['About Hill-Top','/about'],['Insights','/insights'],['Contact','/contact']].map(([label, href]) => <a href={href} key={href}>{label}<ArrowUpRight size={20} /></a>)}</div>}
     <main>
       <section className="inner-hero"><div className="content-width"><p className="eyebrow light">{content.eyebrow}</p><h1>{content.title}</h1><p>{content.intro}</p></div></section>
       <section className="inner-content content-width"><div className="inner-grid">{content.cards.map(([title, copy], index) => <article key={title}><span className="inner-card-number">0{index + 1}</span><h2>{title}</h2><p>{copy}</p><a href={page === 'contact' ? 'mailto:info@hilltopconsultancy.com' : '/contact'}>Start a conversation <ArrowRight size={16} /></a></article>)}</div></section>

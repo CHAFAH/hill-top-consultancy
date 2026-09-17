@@ -7,6 +7,7 @@ export default function App() {
     <Route path="/" component={Home} />
     <Route path="/services"><InnerPage page="services" /></Route>
     <Route path="/about"><InnerPage page="about" /></Route>
+    <Route path="/industries"><InnerPage page="industries" /></Route>
     <Route path="/insights"><InnerPage page="insights" /></Route>
     <Route path="/contact"><InnerPage page="contact" /></Route>
     <Route><InnerPage page="services" /></Route>

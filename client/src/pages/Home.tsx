@@ -85,12 +85,12 @@ function ParticleField() {
 function BrandRail() {
   return (
     <div className="brand-rail" aria-label="Trusted by">
-      <span className="brand siemens">SIEMENS</span>
-      <span className="brand ebay"><b>e</b>bay</span>
-      <span className="brand autoscout"><b>Auto</b><small>Scout24</small></span>
-      <span className="brand gogo"><b>☁</b>gogo</span>
-      <span className="brand fluke">FLUKE.</span>
-      <span className="brand lux">LUX</span>
+      <img className="brand-logo siemens-logo" src="https://cdn.simpleicons.org/siemens/009999" alt="Siemens" />
+      <img className="brand-logo ebay-logo" src="https://cdn.simpleicons.org/ebay/0064D2" alt="eBay" />
+      <img className="brand-logo autoscout-logo" src="https://commons.wikimedia.org/wiki/Special:FilePath/AutoScout24%20Logo%20horizontal%20(2022).svg" alt="AutoScout24" />
+      <img className="brand-logo gogo-logo" src="https://cdn.simpleicons.org/gogo/EC008C" alt="Gogo" />
+      <img className="brand-logo fluke-logo" src="https://cdn.simpleicons.org/fluke/FFCC00" alt="Fluke" />
+      <img className="brand-logo sap-logo" src="https://cdn.simpleicons.org/sap/008FD3" alt="SAP" />
     </div>
   );
 }
@@ -106,6 +106,14 @@ function AppButton({ children, outline = false, href = "#contact" }: { children:
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  function submitSearch(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const query = searchQuery.trim();
+    window.location.href = query ? `/insights?q=${encodeURIComponent(query)}` : "/insights";
+  }
 
   return (
     <div className="site-shell">
@@ -114,11 +122,13 @@ export default function Home() {
         <nav className="desktop-nav" aria-label="Primary navigation">
           <a href="/services">Services <ChevronDown size={15} /></a>
           <a href="/about">About us <ChevronDown size={15} /></a>
+          <a href="/industries">Industries <ChevronDown size={15} /></a>
           <a href="/insights">Success stories</a>
           <a href="/insights">Insights <ChevronDown size={15} /></a>
         </nav>
         <div className="header-actions">
-          <button className="icon-button search-button" aria-label="Search"><Search size={20} /></button>
+          {searchOpen && <form className="header-search-form" onSubmit={submitSearch}><input autoFocus value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} placeholder="Search insights" aria-label="Search insights" /></form>}
+          <button className="icon-button search-button" aria-label="Search" onClick={() => setSearchOpen((open) => !open)}><Search size={20} /></button>
           <Sparkles className="sparkle" size={18} />
           <a className="contact-button" href="/contact">Contact us</a>
           <button className="icon-button mobile-menu-button" aria-label="Open menu" onClick={() => setMenuOpen(true)}><Menu size={24} /></button>
@@ -130,7 +140,7 @@ export default function Home() {
           <button className="drawer-close" aria-label="Close menu" onClick={() => setMenuOpen(false)}><X size={26} /></button>
           <p className="eyebrow">Hill-Top Consultancy / consultancy</p>
           <nav>
-            {[['Services', '/services'], ['About Hill-Top', '/about'], ['Insights', '/insights'], ['Contact us', '/contact']].map(([label, href]) => (
+            {[['Services', '/services'], ['Industries', '/industries'], ['About Hill-Top', '/about'], ['Insights', '/insights'], ['Contact us', '/contact']].map(([label, href]) => (
               <a key={href} href={href} onClick={() => setMenuOpen(false)}>{label}<ArrowUpRight size={22} /></a>
             ))}
           </nav>
