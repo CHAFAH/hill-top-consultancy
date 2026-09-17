@@ -1,4 +1,5 @@
 import { ArrowRight, ArrowUpRight, Check, ChevronDown, Menu } from "lucide-react";
+import SiteFooter from "@/components/SiteFooter";
 import GlobalSearch from "@/components/GlobalSearch";
 import { useRoute } from "wouter";
 import { FormEvent, useMemo, useState } from "react";
@@ -13,7 +14,7 @@ const insights = [
 ];
 
 function InsightsHeader() { const [menuOpen, setMenuOpen] = useState(false); return <><header className="inner-header"><a className="wordmark hilltop-wordmark" href="/" aria-label="Hill-Top Consultancy home">Hill-Top Consultancy</a><nav className="desktop-nav inner-nav" aria-label="Primary navigation"><ServicesMegaMenu /><SiteMegaMenu label="About us" href="/about" intro="About Hill-Top" title="A partner built for lasting value." items={aboutItems} /><SiteMegaMenu label="Industries" href="/industries" intro="Industries we serve" title="Deep context. Better outcomes." items={industryItems} /><a href="/success-stories">Success stories</a><a href="/insights">Insights <ChevronDown size={15} /></a></nav><div className="inner-header-actions"><GlobalSearch /><a className="contact-button inner-contact" href="/contact">Contact us</a><button className="icon-button inner-menu-button" onClick={() => setMenuOpen(true)} aria-label="Open navigation"><Menu size={24} /></button></div></header>{menuOpen && <div className="inner-menu"><button className="inner-menu-close" onClick={() => setMenuOpen(false)}>×</button><p className="eyebrow">Hill-Top Consultancy</p>{[['Services','/services'],['Industries','/industries'],['About Hill-Top','/about'],['Success stories','/success-stories'],['Insights','/insights'],['Contact','/contact']].map(([label, href]) => <a href={href} key={href}>{label}<ArrowUpRight size={20} /></a>)}</div>}</>; }
-function InsightsLayout({ children }: { children: React.ReactNode }) { return <div className="insights-page">{children}</div>; }
+function InsightsLayout({ children }: { children: React.ReactNode }) { return <div className="insights-page">{children}<SiteFooter /></div>; }
 
 export function InsightsIndex() {
   const [query, setQuery] = useState("");

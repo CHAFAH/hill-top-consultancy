@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import SiteFooter from "@/components/SiteFooter";
 import GlobalSearch from "@/components/GlobalSearch";
 import {
   ArrowRight,
@@ -290,7 +291,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="footer"><div className="content-width"><a className="wordmark dark hilltop-wordmark" href="#top">Hill-Top Consultancy</a><p>Pragmatic cloud and DevOps consultancy for modern teams.</p><span>© 2026 Hill-Top Consultancy. Built for confident delivery.</span></div></footer>
+      <SiteFooter />
     </div>
   );
 }

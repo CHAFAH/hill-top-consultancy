@@ -1,4 +1,5 @@
 import { ArrowRight, ArrowUpRight, ChevronDown, Menu, Check } from "lucide-react";
+import SiteFooter from "@/components/SiteFooter";
 import GlobalSearch from "@/components/GlobalSearch";
 import { useRoute } from "wouter";
 import { useState } from "react";
@@ -13,7 +14,7 @@ function ServiceHeader() {
 }
 
 function ServiceLayout({ children }: { children: React.ReactNode }) {
-  return <div className="service-page"><ServiceHeader />{children}</div>;
+  return <div className="service-page"><ServiceHeader />{children}<SiteFooter /></div>;
 }
 
 export function ServicesIndex() {

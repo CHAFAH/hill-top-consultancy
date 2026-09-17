@@ -1,4 +1,5 @@
 import { ArrowRight, ArrowUpRight, ChevronDown, Menu } from "lucide-react";
+import SiteFooter from "@/components/SiteFooter";
 import GlobalSearch from "@/components/GlobalSearch";
 import { useState } from "react";
 import ServicesMegaMenu from "@/components/ServicesMegaMenu";
@@ -81,5 +82,6 @@ export default function InnerPage({ page }: { page: PageKey }) {
       <section className="inner-content content-width"><div className="inner-grid">{content.cards.map(([title, copy], index) => <article key={title}><span className="inner-card-number">0{index + 1}</span><h2>{title}</h2><p>{copy}</p><a href={page === 'contact' ? 'mailto:info@hilltopconsultancy.com' : '/contact'}>Start a conversation <ArrowRight size={16} /></a></article>)}</div></section>
       <section className="inner-cta"><div className="content-width"><p className="eyebrow">Hill-Top Consultancy</p><h2>Make the next step easier to see.</h2><a className="orange-cta" href="/contact">Talk to us <ArrowUpRight size={15} /></a></div></section>
     </main>
+    <SiteFooter />
   </div>;
 }
