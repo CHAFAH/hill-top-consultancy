@@ -331,6 +331,8 @@ button { border: 0; background: transparent; }
 .services-menu-trigger { display: inline-flex; align-items: center; gap: 6px; padding: 0; color: white; font: inherit; font-size: 16px; font-weight: 700; white-space: nowrap; cursor: pointer; }
 .inner-nav .services-menu-trigger { color: var(--ink); }
 .services-mega-panel { position: fixed; z-index: 25; top: 76px; left: 50%; display: grid; grid-template-columns: 265px 1fr; width: min(1100px, calc(100vw - 40px)); max-height: calc(100vh - 96px); overflow: auto; transform: translateX(-50%); color: var(--ink); background: rgba(255,255,255,.98); border: 1px solid rgba(0,0,0,.1); box-shadow: 0 24px 80px rgba(0,0,0,.24); }
+.desktop-nav .services-mega-panel a, .desktop-nav .simple-mega-panel a { color: var(--ink) !important; opacity: 1; transform: none; }
+.desktop-nav .services-mega-panel a:hover, .desktop-nav .simple-mega-panel a:hover { color: var(--orange) !important; opacity: 1; transform: none; }
 .services-mega-intro { padding: 33px 28px; background: linear-gradient(145deg, #fff8f1, #f4f5f6); }
 .services-mega-intro h2 { margin: 18px 0 34px; font-family: var(--display); font-size: 27px; line-height: 1.02; letter-spacing: -1px; }
 .services-mega-intro > a { display: inline-flex; align-items: center; gap: 7px; color: var(--orange); font-size: 12px; font-weight: 700; }
