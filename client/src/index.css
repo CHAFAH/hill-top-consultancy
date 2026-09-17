@@ -861,3 +861,16 @@ button { border: 0; background: transparent; }
   .uploaded-brand-logo { width: 105px; height: 45px; }
   .image-partner-mark img { height: 55px; }
 }
+
+/* Supplied Hill-Top brand lockup */
+.hilltop-wordmark { display: inline-flex; align-items: center; width: 232px; height: 58px; }
+.hilltop-logo-image { display: block; width: 100%; height: 100%; object-fit: contain; object-position: left center; mix-blend-mode: multiply; }
+.footer-wordmark { display: inline-flex; width: 255px; height: 105px; align-items: center; }
+.footer-wordmark .hilltop-logo-image { mix-blend-mode: screen; }
+@media (max-width: 1000px) {
+  .hilltop-wordmark { width: 185px; height: 50px; }
+}
+@media (max-width: 800px) {
+  .hilltop-wordmark { width: 170px; height: 48px; }
+  .footer-wordmark { width: 235px; height: 96px; }
+}

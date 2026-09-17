@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import LogoLockup from "@/components/LogoLockup";
 import SiteFooter from "@/components/SiteFooter";
 import GlobalSearch from "@/components/GlobalSearch";
 import {
@@ -142,7 +143,7 @@ export default function Home() {
   return (
     <div className="site-shell">
       <header className="site-header">
-        <a className="wordmark hilltop-wordmark" href="#top" aria-label="Hill-Top Consultancy home">Hill-Top Consultancy</a>
+        <a className="wordmark hilltop-wordmark" href="#top" aria-label="Hill-Top Consultancy home"><LogoLockup /></a>
         <nav className="desktop-nav" aria-label="Primary navigation">
           <ServicesMegaMenu />
           <SiteMegaMenu label="About us" href="/about" intro="About Hill-Top" title="A partner built for lasting value." items={aboutItems} />

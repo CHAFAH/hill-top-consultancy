@@ -1,4 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from "react";
+import LogoLockup from "@/components/LogoLockup";
 import { ArrowRight, ArrowUpRight, Check, ChevronDown, Menu, Paperclip, X } from "lucide-react";
 import GlobalSearch from "@/components/GlobalSearch";
 import SiteFooter from "@/components/SiteFooter";
@@ -17,7 +18,7 @@ const offices = [
 ];
 
 function ContactHeader({ onMenu }: { onMenu: () => void }) {
-  return <header className="inner-header contact-header"><a className="wordmark hilltop-wordmark" href="/" aria-label="Hill-Top Consultancy home">Hill-Top Consultancy</a><nav className="desktop-nav inner-nav" aria-label="Primary navigation"><ServicesMegaMenu /><SiteMegaMenu label="About us" href="/about" intro="About Hill-Top" title="A partner built for lasting value." items={aboutItems} /><SiteMegaMenu label="Industries" href="/industries" intro="Industries we serve" title="Deep context. Better outcomes." items={industryItems} /><a href="/success-stories">Success stories</a><a href="/insights">Insights <ChevronDown size={15} /></a></nav><div className="inner-header-actions"><GlobalSearch /><a className="contact-button inner-contact" href="/contact">Contact us</a><button className="icon-button inner-menu-button" onClick={onMenu} aria-label="Open navigation"><Menu size={24} /></button></div></header>;
+  return <header className="inner-header contact-header"><a className="wordmark hilltop-wordmark" href="/" aria-label="Hill-Top Consultancy home"><LogoLockup /></a><nav className="desktop-nav inner-nav" aria-label="Primary navigation"><ServicesMegaMenu /><SiteMegaMenu label="About us" href="/about" intro="About Hill-Top" title="A partner built for lasting value." items={aboutItems} /><SiteMegaMenu label="Industries" href="/industries" intro="Industries we serve" title="Deep context. Better outcomes." items={industryItems} /><a href="/success-stories">Success stories</a><a href="/insights">Insights <ChevronDown size={15} /></a></nav><div className="inner-header-actions"><GlobalSearch /><a className="contact-button inner-contact" href="/contact">Contact us</a><button className="icon-button inner-menu-button" onClick={onMenu} aria-label="Open navigation"><Menu size={24} /></button></div></header>;
 }
 
 export default function ContactPage() {
