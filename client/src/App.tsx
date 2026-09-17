@@ -6,6 +6,7 @@ import { AboutRouter } from "./pages/AboutPages";
 import { IndustryRouter } from "./pages/IndustryPages";
 import { StoriesRouter } from "./pages/SuccessStories";
 import { InsightsRouter } from "./pages/InsightsPages";
+import ContactPage from "./pages/ContactPage";
 
 export default function App() {
   return <Switch>
@@ -21,7 +22,7 @@ export default function App() {
     <Route path="/success-stories"><StoriesRouter /></Route>
     <Route path="/insights/:slug"><InsightsRouter /></Route>
     <Route path="/insights"><InsightsRouter /></Route>
-    <Route path="/contact"><InnerPage page="contact" /></Route>
+    <Route path="/contact"><ContactPage /></Route>
     <Route><InnerPage page="services" /></Route>
   </Switch>;
 }
