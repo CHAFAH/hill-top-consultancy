@@ -968,3 +968,12 @@ button { border: 0; background: transparent; }
 .case-card:hover h3, .case-card:hover p { color: inherit; }
 .story-pdf-link { display: inline-flex; align-items: center; gap: 9px; width: fit-content; margin-top: 30px; padding: 13px 17px; background: white; color: #13253b; font-size: 13px; font-weight: 800; text-decoration: none; }
 .story-pdf-link:hover { background: #13253b; color: white; }
+
+.case-card-image { display: block; width: 100%; height: 145px; margin: 18px 0 20px; object-fit: cover; filter: saturate(.88); }
+.story-visual, .story-diagram { margin: 42px 0 0; }
+.story-visual img { display: block; width: 100%; max-height: 470px; object-fit: cover; }
+.story-diagram { padding: 24px; background: #f5f2ed; }
+.story-diagram img { display: block; width: 100%; max-height: 410px; object-fit: contain; }
+.story-visual figcaption, .story-diagram figcaption { margin-top: 9px; color: #718094; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+.story-company-link { display: inline-flex; align-items: center; gap: 7px; margin-top: 18px; color: #e5531a; font-size: 13px; font-weight: 800; text-decoration: none; }
+.story-company-link:hover { text-decoration: underline; }
