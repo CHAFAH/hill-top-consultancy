@@ -88,7 +88,7 @@ function BrandRail() {
       <img className="brand-logo siemens-logo" src="https://cdn.simpleicons.org/siemens/009999" alt="Siemens" />
       <img className="brand-logo ebay-logo" src="https://cdn.simpleicons.org/ebay/0064D2" alt="eBay" />
       <img className="brand-logo autoscout-logo" src="https://commons.wikimedia.org/wiki/Special:FilePath/AutoScout24%20Logo%20horizontal%20(2022).svg" alt="AutoScout24" />
-      <img className="brand-logo gogo-logo" src="https://cdn.simpleicons.org/gogo/EC008C" alt="Gogo" />
+      <img className="brand-logo gogo-logo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Gogo%20Business%20Aviation%20logo.svg" alt="Gogo Business Aviation" />
       <img className="brand-logo fluke-logo" src="https://cdn.simpleicons.org/fluke/FFCC00" alt="Fluke" />
       <img className="brand-logo sap-logo" src="https://cdn.simpleicons.org/sap/008FD3" alt="SAP" />
     </div>
