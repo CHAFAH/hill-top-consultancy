@@ -51,12 +51,15 @@ const caseStudies = [
   "A housing management platform. 150+ engineers. Regression testing from three days to four hours. Incident resolution down 87.5%.",
 ];
 
-const partnerMarks = [
-  { name: "Microsoft", sub: "Solutions Partner", color: "#767676" },
-  { name: "Google Cloud", sub: "Partner", color: "#4285f4" },
-  { name: "aws", sub: "partner network", color: "#222" },
-  { name: "PALANTIR", sub: "Premier", color: "#1d4e72" },
-  { name: "SAP", sub: "Partner", color: "#0878ad" },
+const partnerLogos = [
+  ["Google Cloud", "/manus-storage/pasted_file_0ZJrVd_image_d21ac7c8.png"],
+  ["AWS", "/manus-storage/pasted_file_KIwolE_image_1a4eb1bb.png"],
+  ["Microsoft Azure", "/manus-storage/pasted_file_WQai7H_image_355fbd21.png"],
+  ["IBM", "/manus-storage/pasted_file_WHchFQ_image_f6560911.png"],
+  ["SAP", "/manus-storage/pasted_file_7mktkO_image_9c8338e1.png"],
+  ["Kubernetes", "/manus-storage/pasted_file_ACmrZB_image_7a5fc9e6.png"],
+  ["GitHub", "/manus-storage/pasted_file_hyl1a9_image_8fe3950b.png"],
+  ["CircleCI", "/manus-storage/pasted_file_JhnIeu_image_24d7008b.png"],
 ];
 
 function ParticleField() {
@@ -89,12 +92,7 @@ function ParticleField() {
 function BrandRail() {
   return (
     <div className="brand-rail" aria-label="Trusted by">
-      <img className="brand-logo siemens-logo" src="https://cdn.simpleicons.org/siemens/009999" alt="Siemens" />
-      <img className="brand-logo ebay-logo" src="https://cdn.simpleicons.org/ebay/0064D2" alt="eBay" />
-      <img className="brand-logo autoscout-logo" src="https://commons.wikimedia.org/wiki/Special:FilePath/AutoScout24%20Logo%20horizontal%20(2022).svg" alt="AutoScout24" />
-      <img className="brand-logo gogo-logo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Gogo%20Business%20Aviation%20logo.svg" alt="Gogo Business Aviation" />
-      <img className="brand-logo fluke-logo" src="https://cdn.simpleicons.org/fluke/FFCC00" alt="Fluke" />
-      <img className="brand-logo sap-logo" src="https://cdn.simpleicons.org/sap/008FD3" alt="SAP" />
+      {partnerLogos.slice(0, 6).map(([name, src]) => <img className="brand-logo uploaded-brand-logo" src={src} alt={name} key={name} />)}
     </div>
   );
 }
@@ -256,7 +254,7 @@ export default function Home() {
           <h2>Certified partnerships with the platforms your teams already run</h2>
           <p>Hill-Top Consultancy helps teams make the most of the platforms they already run, with practical depth across Microsoft, AWS, Google Cloud, Kubernetes, and modern data foundations.</p>
           <div className="partner-row">
-            {partnerMarks.map((partner) => <div className="partner-mark" key={partner.name} style={{ '--mark-color': partner.color } as React.CSSProperties}><b>{partner.name}</b><small>{partner.sub}</small></div>)}
+            {partnerLogos.map(([name, src]) => <div className="partner-mark image-partner-mark" key={name}><img src={src} alt={name} /></div>)}
           </div>
             <a href="/contact" className="orange-cta">Explore our partnerships <ArrowUpRight size={14} /></a>
         </section>
