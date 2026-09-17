@@ -111,11 +111,17 @@ export default function Home() {
     <div className="site-shell">
       <header className="site-header">
         <a className="wordmark hilltop-wordmark" href="#top" aria-label="Hill-Top Consultancy home">Hill-Top Consultancy</a>
+        <nav className="desktop-nav" aria-label="Primary navigation">
+          <a href="/services">Services <ChevronDown size={15} /></a>
+          <a href="/about">About us <ChevronDown size={15} /></a>
+          <a href="/insights">Success stories</a>
+          <a href="/insights">Insights <ChevronDown size={15} /></a>
+        </nav>
         <div className="header-actions">
           <button className="icon-button search-button" aria-label="Search"><Search size={20} /></button>
           <Sparkles className="sparkle" size={18} />
           <a className="contact-button" href="/contact">Contact us</a>
-          <button className="icon-button" aria-label="Open menu" onClick={() => setMenuOpen(true)}><Menu size={24} /></button>
+          <button className="icon-button mobile-menu-button" aria-label="Open menu" onClick={() => setMenuOpen(true)}><Menu size={24} /></button>
         </div>
       </header>
 

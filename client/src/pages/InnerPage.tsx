@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight, Menu, Sparkles, Search } from "lucide-react";
+import { ArrowRight, ArrowUpRight, ChevronDown, Menu } from "lucide-react";
 import { useState } from "react";
 
 const pageData = {
@@ -51,7 +51,7 @@ const pageData = {
 type PageKey = keyof typeof pageData;
 
 function PageHeader({ onMenu }: { onMenu: () => void }) {
-  return <header className="inner-header"><a className="wordmark hilltop-wordmark" href="/" aria-label="Hill-Top Consultancy home">Hill-Top Consultancy</a><div className="inner-header-actions"><a className="contact-button inner-contact" href="/contact">Contact us</a><button className="icon-button" onClick={onMenu} aria-label="Open navigation"><Menu size={24} /></button></div></header>;
+  return <header className="inner-header"><a className="wordmark hilltop-wordmark" href="/" aria-label="Hill-Top Consultancy home">Hill-Top Consultancy</a><nav className="desktop-nav inner-nav" aria-label="Primary navigation"><a href="/services">Services <ChevronDown size={15} /></a><a href="/about">About us <ChevronDown size={15} /></a><a href="/insights">Success stories</a><a href="/insights">Insights <ChevronDown size={15} /></a></nav><div className="inner-header-actions"><a className="contact-button inner-contact" href="/contact">Contact us</a><button className="icon-button inner-menu-button" onClick={onMenu} aria-label="Open navigation"><Menu size={24} /></button></div></header>;
 }
 
 export default function InnerPage({ page }: { page: PageKey }) {
