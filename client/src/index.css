@@ -890,3 +890,47 @@ button { border: 0; background: transparent; }
 .leadership-links a { display: inline-flex; align-items: center; gap: 8px; padding: 12px 15px; border: 1px solid rgba(19,37,59,.18); color: #13253b; font-size: 14px; font-weight: 700; text-decoration: none; transition: background .18s ease, color .18s ease, transform .18s ease; }
 .leadership-links a:hover { background: #13253b; color: white; transform: translateY(-2px); }
 @media (max-width: 800px) { .leadership-profile { grid-template-columns: 1fr; margin-top: 48px; padding-top: 36px; } .leadership-photo-wrap { max-width: 300px; } .leadership-profile-copy h2 { font-size: 42px; } }
+
+.privacy-highlight { color: #e5531a; font-weight: 800; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.legal-hero, .careers-hero { padding: 170px 0 100px; color: white; background: linear-gradient(115deg,#ff6d00,#cf2c13 75%,#9c2017); }
+.legal-hero h1, .careers-hero h1 { max-width: 900px; margin: 18px 0; font-size: clamp(48px, 7vw, 94px); line-height: .96; letter-spacing: -.055em; }
+.legal-hero p, .careers-hero p { max-width: 760px; margin: 0; color: rgba(255,255,255,.82); font-size: 19px; line-height: 1.6; }
+.legal-updated { display: inline-block; margin-top: 28px; color: rgba(255,255,255,.65); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.legal-body { padding-top: 86px; padding-bottom: 100px; }
+.legal-article { max-width: 850px; margin: 0 auto; color: #526375; font-size: 17px; line-height: 1.8; }
+.legal-article h2 { margin: 48px 0 14px; color: #13253b; font-size: 30px; line-height: 1.15; letter-spacing: -.025em; }
+.legal-article p { margin: 0 0 18px; }
+.legal-article ul { margin: 0 0 22px; padding-left: 24px; }
+.legal-article li { margin: 8px 0; }
+.legal-article a { color: #e5531a; font-weight: 700; }
+.legal-lead { color: #13253b; font-size: 23px; line-height: 1.55; }
+.careers-main { padding-top: 74px; padding-bottom: 100px; }
+.careers-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; padding-bottom: 72px; border-bottom: 1px solid rgba(19,37,59,.14); }
+.careers-intro h2, .application-process h2 { margin: 12px 0 0; color: #13253b; font-size: clamp(32px, 4vw, 56px); line-height: 1; letter-spacing: -.045em; }
+.careers-intro p { align-self: end; color: #526375; font-size: 18px; line-height: 1.7; }
+.job-board { padding: 82px 0; }
+.job-board-heading { display: flex; justify-content: space-between; gap: 32px; align-items: end; margin-bottom: 28px; }
+.job-board-heading h2 { margin: 10px 0 0; color: #13253b; font-size: 42px; letter-spacing: -.04em; }
+.job-board-heading p { color: #68788b; }
+.job-filters { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 12px; margin-bottom: 22px; }
+.job-search, .job-filters select { display: flex; align-items: center; gap: 10px; min-height: 50px; padding: 0 15px; border: 1px solid rgba(19,37,59,.2); background: white; color: #13253b; }
+.job-search input, .job-filters select { width: 100%; border: 0; outline: 0; background: transparent; color: inherit; font: inherit; }
+.jobs-table-wrap { overflow-x: auto; border-top: 3px solid #13253b; }
+.jobs-table { width: 100%; min-width: 940px; border-collapse: collapse; }
+.jobs-table th { padding: 16px 14px; text-align: left; color: #68788b; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+.jobs-table td { padding: 20px 14px; border-top: 1px solid rgba(19,37,59,.12); color: #526375; font-size: 14px; vertical-align: top; }
+.jobs-table td:first-child { min-width: 310px; color: #13253b; }
+.jobs-table td strong, .jobs-table td span { display: block; }
+.jobs-table td strong { margin-bottom: 7px; font-size: 17px; }
+.jobs-table td span { color: #68788b; line-height: 1.5; }
+.jobs-table td a { display: inline-flex; align-items: center; gap: 5px; color: #e5531a; font-weight: 800; text-decoration: none; white-space: nowrap; }
+.jobs-table tr:hover td { background: #fff8f2; }
+.jobs-empty { padding: 40px 0; color: #526375; }
+.jobs-empty a { color: #e5531a; font-weight: 700; }
+.application-process { display: grid; grid-template-columns: .75fr 1.25fr; gap: 70px; padding: 76px 0 0; border-top: 1px solid rgba(19,37,59,.14); }
+.process-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+.process-steps article { padding: 24px; background: #f5f2ed; }
+.process-steps b { color: #e5531a; font-size: 12px; letter-spacing: .12em; }
+.process-steps h3 { margin: 16px 0 8px; color: #13253b; font-size: 20px; }
+.process-steps p { margin: 0; color: #68788b; line-height: 1.6; }
+@media (max-width: 800px) { .legal-hero, .careers-hero { padding: 130px 0 70px; } .careers-intro, .application-process { grid-template-columns: 1fr; gap: 28px; } .job-board-heading { display: block; } .job-filters { grid-template-columns: 1fr; } .process-steps { grid-template-columns: 1fr; } }
