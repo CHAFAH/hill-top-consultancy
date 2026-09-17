@@ -53,14 +53,14 @@ const caseStudies = [
 ];
 
 const partnerLogos = [
-  ["Google Cloud", "/manus-storage/pasted_file_0ZJrVd_image_d21ac7c8.png"],
-  ["AWS", "/manus-storage/pasted_file_KIwolE_image_1a4eb1bb.png"],
-  ["Microsoft Azure", "/manus-storage/pasted_file_WQai7H_image_355fbd21.png"],
-  ["IBM", "/manus-storage/pasted_file_WHchFQ_image_f6560911.png"],
-  ["SAP", "/manus-storage/pasted_file_7mktkO_image_9c8338e1.png"],
-  ["Kubernetes", "/manus-storage/pasted_file_ACmrZB_image_7a5fc9e6.png"],
-  ["GitHub", "/manus-storage/pasted_file_hyl1a9_image_8fe3950b.png"],
-  ["CircleCI", "/manus-storage/pasted_file_JhnIeu_image_24d7008b.png"],
+  ["Google Cloud", "/assets/google-cloud.png"],
+  ["AWS", "/assets/aws.png"],
+  ["Microsoft Azure", "/assets/azure.png"],
+  ["IBM", "/assets/ibm.png"],
+  ["SAP", "/assets/sap.png"],
+  ["Kubernetes", "/assets/kubernetes.png"],
+  ["GitHub", "/assets/github.png"],
+  ["CircleCI", "/assets/circleci.png"],
 ];
 
 function ParticleField() {
@@ -220,7 +220,7 @@ export default function Home() {
 
         <section className="testimonial-section">
           <div className="testimonial content-width">
-            <div className="testimonial-logo-wrap"><img className="testimonial-logo" src="/manus-storage/logo-white_887f124c.png" alt="TRANZAK SARL" /></div>
+            <div className="testimonial-logo-wrap"><img className="testimonial-logo" src="/assets/tranzak-logo.png" alt="TRANZAK SARL" /></div>
             <div className="quote-content">
               <div className="quote-mark">“</div>
               <p>What stood out was how quickly Hill-Top Consultancy turned a complex technology challenge into a clear operating model.<br />The team brought our people, platforms, and security priorities together around practical standards we could adopt across the organisation.</p>
