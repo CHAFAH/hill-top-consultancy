@@ -1,12 +1,22 @@
 import { ChevronDown, ArrowUpRight } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type MenuItem = { name: string; href: string };
 type SiteMegaMenuProps = { label: string; href: string; intro: string; title: string; items: MenuItem[] };
 
 export default function SiteMegaMenu({ label, href, intro, title, items }: SiteMegaMenuProps) {
   const [open, setOpen] = useState(false);
-  return <div className="services-menu">
+  const menuRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const closeWhenOutside = (event: PointerEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) setOpen(false);
+    };
+    const closeOnEscape = (event: KeyboardEvent) => { if (event.key === "Escape") setOpen(false); };
+    document.addEventListener("pointerdown", closeWhenOutside);
+    document.addEventListener("keydown", closeOnEscape);
+    return () => { document.removeEventListener("pointerdown", closeWhenOutside); document.removeEventListener("keydown", closeOnEscape); };
+  }, []);
+  return <div className="services-menu" ref={menuRef}>
     <button className="services-menu-trigger" onClick={() => setOpen((value) => !value)} onMouseEnter={() => setOpen(true)} onFocus={() => setOpen(true)} aria-expanded={open}>{label} <ChevronDown size={15} /></button>
     {open && <div className="simple-mega-panel"><div className="services-mega-intro"><span className="eyebrow">{intro}</span><h2>{title}</h2><a href={href} onClick={() => setOpen(false)}>View overview <ArrowUpRight size={16} /></a></div><div className="simple-mega-items">{items.map((item) => <a href={item.href} onClick={() => setOpen(false)} key={item.href}>{item.name}<ArrowUpRight size={15} /></a>)}</div></div>}
   </div>;
