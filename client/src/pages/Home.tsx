@@ -8,6 +8,8 @@ import {
   Sparkles,
   X,
 } from "lucide-react";
+import ServicesMegaMenu from "@/components/ServicesMegaMenu";
+import SiteMegaMenu, { aboutItems, industryItems } from "@/components/SiteMegaMenu";
 
 const phases = [
   {
@@ -151,9 +153,9 @@ export default function Home() {
       <header className="site-header">
         <a className="wordmark hilltop-wordmark" href="#top" aria-label="Hill-Top Consultancy home">Hill-Top Consultancy</a>
         <nav className="desktop-nav" aria-label="Primary navigation">
-          <a href="/services">Services <ChevronDown size={15} /></a>
-          <a href="/about">About us <ChevronDown size={15} /></a>
-          <a href="/industries">Industries <ChevronDown size={15} /></a>
+          <ServicesMegaMenu />
+          <SiteMegaMenu label="About us" href="/about" intro="About Hill-Top" title="A partner built for lasting value." items={aboutItems} />
+          <SiteMegaMenu label="Industries" href="/industries" intro="Industries we serve" title="Deep context. Better outcomes." items={industryItems} />
           <a href="/insights">Success stories</a>
           <a href="/insights">Insights <ChevronDown size={15} /></a>
         </nav>
