@@ -95,6 +95,37 @@ function BrandRail() {
   );
 }
 
+function GlobeVisual() {
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
+  const nodes = [
+    [98, 139, "Copenhagen"], [143, 112, "London"], [191, 155, "Frankfurt"], [257, 112, "Stockholm"],
+    [82, 220, "New York"], [285, 220, "Tokyo"], [220, 278, "Singapore"], [155, 286, "Dubai"],
+  ];
+  return <div className="globe-visual" onMouseMove={(event) => { const rect = event.currentTarget.getBoundingClientRect(); setTilt({ x: (event.clientX - rect.left - rect.width / 2) / 24, y: (event.clientY - rect.top - rect.height / 2) / 24 }); }} onMouseLeave={() => setTilt({ x: 0, y: 0 })} aria-hidden="true">
+    <div className="globe-caption">CONNECTED <span>GLOBAL TECHNOLOGY</span></div>
+    <svg viewBox="0 0 360 360" role="presentation" style={{ transform: `rotateX(${-tilt.y}deg) rotateY(${tilt.x}deg)` }}>
+      <defs>
+        <radialGradient id="globe-fill" cx="35%" cy="30%"><stop offset="0" stopColor="#153c59" /><stop offset=".58" stopColor="#071622" /><stop offset="1" stopColor="#02080d" /></radialGradient>
+        <filter id="glow"><feGaussianBlur stdDeviation="4" result="blur" /><feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
+        <clipPath id="globe-clip"><circle cx="180" cy="180" r="130" /></clipPath>
+      </defs>
+      <circle cx="180" cy="180" r="140" fill="#042032" opacity=".35" filter="url(#glow)" />
+      <circle cx="180" cy="180" r="130" fill="url(#globe-fill)" stroke="#3bc4e8" strokeOpacity=".6" strokeWidth="1.4" />
+      <g clipPath="url(#globe-clip)" fill="none" stroke="#63cce7" strokeOpacity=".34" strokeWidth=".8">
+        <ellipse cx="180" cy="180" rx="129" ry="41" /><ellipse cx="180" cy="180" rx="129" ry="78" /><ellipse cx="180" cy="180" rx="129" ry="110" />
+        <ellipse cx="180" cy="180" rx="41" ry="130" /><ellipse cx="180" cy="180" rx="78" ry="130" /><ellipse cx="180" cy="180" rx="110" ry="130" />
+        <path d="M52 180h256M61 130h238M61 230h238" />
+      </g>
+      <g clipPath="url(#globe-clip)" fill="none" stroke="#8de5fa" strokeOpacity=".62" strokeWidth="1.1">
+        <path d="M98 139Q144 157 191 155T257 112" /><path d="M82 220Q143 112 191 155T285 220" /><path d="M155 286Q174 225 220 278" />
+      </g>
+      <g filter="url(#glow)">{nodes.map(([x, y, label], index) => <g key={label as string} className="globe-node"><circle cx={x} cy={y} r="4" fill="#bdf6ff" /><circle cx={x} cy={y} r="9" fill="none" stroke="#5de3ff" strokeOpacity=".5" strokeWidth="1"><animate attributeName="r" values="7;13;7" dur={`${2.4 + index / 5}s`} repeatCount="indefinite" /></circle><title>{label as string}</title></g>)}</g>
+      <text x="180" y="190" textAnchor="middle" fill="#d9f9ff" fontSize="11" letterSpacing="3">SCALE</text>
+    </svg>
+    <div className="globe-tech-labels"><span>AWS</span><span>KUBERNETES</span><span>DEVOPS</span></div>
+  </div>;
+}
+
 function AppButton({ children, outline = false, href = "#contact" }: { children: React.ReactNode; outline?: boolean; href?: string }) {
   return (
     <a className={`app-button ${outline ? "outline" : ""}`} href={href}>
@@ -151,6 +182,7 @@ export default function Home() {
       <main id="top">
         <section className="hero-section">
           <ParticleField />
+          <GlobeVisual />
           <div className="hero-content">
             <p className="eyebrow light">Hill-Top Consultancy / engineering, elevated</p>
             <h1><span>Pragmatic Cloud</span><span>&amp; DevOps Consulting</span></h1>
