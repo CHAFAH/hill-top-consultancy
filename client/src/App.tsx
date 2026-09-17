@@ -7,7 +7,7 @@ import { IndustryRouter } from "./pages/IndustryPages";
 import { StoriesRouter } from "./pages/SuccessStories";
 import { InsightsRouter } from "./pages/InsightsPages";
 import ContactPage from "./pages/ContactPage";
-import { CareersPage, PrivacyPolicyPage } from "./pages/LegalAndCareersPages";
+import { CareersPage, JobDetailPage, PrivacyPolicyPage } from "./pages/LegalAndCareersPages";
 
 export default function App() {
   return <Switch>
@@ -25,6 +25,7 @@ export default function App() {
     <Route path="/insights"><InsightsRouter /></Route>
     <Route path="/privacy-policy"><PrivacyPolicyPage /></Route>
     <Route path="/about/privacy-notice"><PrivacyPolicyPage /></Route>
+    <Route path="/careers/:slug">{(params) => <JobDetailPage slug={params.slug} />}</Route>
     <Route path="/careers"><CareersPage /></Route>
     <Route path="/about/careers"><CareersPage /></Route>
     <Route path="/contact"><ContactPage /></Route>

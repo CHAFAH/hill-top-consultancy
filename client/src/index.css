@@ -934,3 +934,32 @@ button { border: 0; background: transparent; }
 .process-steps h3 { margin: 16px 0 8px; color: #13253b; font-size: 20px; }
 .process-steps p { margin: 0; color: #68788b; line-height: 1.6; }
 @media (max-width: 800px) { .legal-hero, .careers-hero { padding: 130px 0 70px; } .careers-intro, .application-process { grid-template-columns: 1fr; gap: 28px; } .job-board-heading { display: block; } .job-filters { grid-template-columns: 1fr; } .process-steps { grid-template-columns: 1fr; } }
+
+.job-title-link { display: block; color: #13253b; text-decoration: none; }
+.job-title-link:hover { color: #e5531a; }
+.job-detail-hero { padding: 150px 0 82px; color: white; background: linear-gradient(115deg,#ff6d00,#cf2c13 75%,#9c2017); }
+.back-link { display: inline-block; margin-bottom: 58px; color: rgba(255,255,255,.8); font-size: 14px; text-decoration: none; }
+.back-link:hover { color: white; text-decoration: underline; }
+.job-detail-hero h1 { max-width: 900px; margin: 16px 0; font-size: clamp(48px, 7vw, 90px); line-height: .96; letter-spacing: -.055em; }
+.job-detail-hero p { max-width: 760px; margin: 0; color: rgba(255,255,255,.86); font-size: 20px; line-height: 1.55; }
+.job-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+.job-meta span { padding: 9px 13px; border: 1px solid rgba(255,255,255,.35); color: white; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+.job-detail-main { padding-top: 84px; padding-bottom: 110px; }
+.job-detail-layout { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(330px, .85fr); gap: clamp(40px, 8vw, 110px); align-items: start; }
+.job-description { color: #526375; font-size: 17px; line-height: 1.75; }
+.job-description h2 { margin: 0 0 16px; color: #13253b; font-size: 34px; line-height: 1.1; letter-spacing: -.035em; }
+.job-description h2:not(:first-child) { margin-top: 50px; }
+.job-description p { margin-top: 0; }
+.job-description ul { padding-left: 24px; }
+.job-description li { margin: 10px 0; }
+.job-application-card { position: sticky; top: 105px; padding: 30px; background: #f5f2ed; border-top: 4px solid #e5531a; }
+.job-application-card h2 { margin: 10px 0 24px; color: #13253b; font-size: 34px; line-height: 1; letter-spacing: -.04em; }
+.job-application-form { display: grid; gap: 15px; }
+.job-application-form label { display: grid; gap: 7px; color: #13253b; font-size: 13px; font-weight: 700; }
+.job-application-form input:not([type="checkbox"]), .job-application-form textarea { width: 100%; box-sizing: border-box; padding: 12px; border: 1px solid rgba(19,37,59,.2); background: white; color: #13253b; font: inherit; }
+.job-application-form input[type="file"] { padding: 10px; background: white; font-size: 12px; }
+.job-application-form .consent { display: flex; grid-template-columns: auto 1fr; align-items: flex-start; gap: 9px; font-weight: 400; line-height: 1.5; }
+.application-success { color: #526375; line-height: 1.6; }
+.application-success svg { color: #e5531a; }
+.application-success h3 { color: #13253b; font-size: 25px; }
+@media (max-width: 850px) { .job-detail-layout { grid-template-columns: 1fr; } .job-application-card { position: static; } .job-detail-hero { padding-top: 125px; } }
