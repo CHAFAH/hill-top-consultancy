@@ -212,13 +212,13 @@ button { border: 0; background: transparent; }
 
 @media (max-width: 800px) {
   .content-width { width: min(100% - 38px, 640px); }
-  .site-header { padding: 17px 18px; }
+  .site-header { grid-template-columns: minmax(0, 1fr) auto; gap: 10px; padding: 17px 18px; }
   .wordmark { font-size: 28px; }
   .site-header .hilltop-wordmark { font-size: 20px; }
   .desktop-nav { display: none; }
-  .contact-button { padding: 12px 17px; font-size: 11px; }
-  .search-button, .sparkle { display: none; }
-  .mobile-menu-button { display: inline-flex; }
+  .site-header .contact-button { display: none; }
+  .search-button, .sparkle, .global-search-trigger { display: none; }
+  .mobile-menu-button { display: inline-flex; width: 42px; height: 42px; color: white; }
   .hero-section { min-height: 700px; align-items: flex-end; }
   .hero-content { width: min(100% - 38px, 640px); margin: 0 auto 92px; padding: 0; text-align: left; }
   .hero-content h1 { font-size: clamp(43px, 10vw, 66px); letter-spacing: -3px; }
@@ -310,11 +310,13 @@ button { border: 0; background: transparent; }
 .inner-cta { padding: 90px 0; color: white; background: #111; }
 .inner-cta h2 { max-width: 680px; margin: 20px 0 30px; font-family: var(--display); font-size: clamp(42px, 5vw, 70px); line-height: .95; letter-spacing: -3px; }
 @media (max-width: 800px) {
-  .inner-header { padding: 17px 18px; }
+  .inner-header { grid-template-columns: minmax(0, 1fr) auto; gap: 10px; padding: 17px 18px; }
   .inner-header .hilltop-wordmark { font-size: 20px; }
   .inner-nav { display: none; }
-  .inner-contact { padding: 12px 15px; font-size: 11px; }
-  .inner-menu-button { display: inline-flex; }
+  .inner-header .inner-contact { display: none; }
+  .inner-header-actions { gap: 8px; }
+  .inner-header-actions .global-search-trigger { display: none; }
+  .inner-menu-button { display: inline-flex; width: 42px; height: 42px; color: var(--ink); }
   .inner-hero { min-height: 600px; padding: 140px 0 65px; }
   .inner-hero h1 { font-size: 51px; letter-spacing: -2.5px; }
   .inner-hero p:not(.eyebrow) { font-size: 15px; }
